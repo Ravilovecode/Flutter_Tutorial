@@ -1,31 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:todoapp/mainScreen.dart';
 
 void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Hello Flutter App"),
-          backgroundColor: Color.fromARGB(255, 63, 194, 183),
-        ),
-        body: Center(
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.yellow, // Set the background color here
-              borderRadius: BorderRadius.circular(8.0), // Set the border radius here
-            ), // Optional: Add padding for better appearance
-            child: Text(
-              "Welcome to my Hello Flutter App!",
-              style: TextStyle(fontSize: 24), // Optional: Adjust text style
-            ),
-          ),
-        ),
+      theme: ThemeData.light(
+        useMaterial3: true,
       ),
+      home: MainScreen(),
     );
   }
 }
